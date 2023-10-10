@@ -1,5 +1,5 @@
 # utility_watch
-
+Are you tired of high water and electricity bills that seem to come out of nowhere? Want to take control of your utility expenses and make eco-conscious choices? Look no further than AquaEnergi Tracker, your comprehensive solution for managing water and electricity consumption effortlessly!
 A new Flutter project.
 
 ## Getting Started
