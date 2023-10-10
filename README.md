@@ -24,6 +24,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ## How would you like to contribute to this Project?
 <li>View our issue page to contribute</li>
+<li>Design files will be present in the issue Page</li>
 
 ## Contribution Guide 🤠
 Before contributing be sure to check out the [CONTRIBUTION](CONTRIBUTING.md) guidelines.
