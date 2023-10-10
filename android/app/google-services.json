@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "83890367626",
+    "project_id": "utilityapp-f1996",
+    "storage_bucket": "utilityapp-f1996.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:83890367626:android:246fd0eb24571256efd173",
+        "android_client_info": {
+          "package_name": "com.example.utility_watch"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtBoxpP4a9uRgOVSdWKoX8N9uYW6p8GcU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
