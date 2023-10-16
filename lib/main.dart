@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Utility-Watch',
       theme: ThemeData(),
-      home: const SignUpPage(),
+      home: SignUpPage(),  
     );
   }
 }
