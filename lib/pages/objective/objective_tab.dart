@@ -77,7 +77,7 @@ class ObjectivePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   MyPercentageContainer(heading: "Electricity", percentage: "60%"),
-                  SizedBox(width: 20),
+                  // SizedBox(width: 10),
                   MyPercentageContainer(heading: "Water", percentage: "40%"),
                 ],
               ),
