@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:utility_watch/globals/colors.dart';
 import 'package:utility_watch/pages/SignUpSignIn/signup_page.dart';
-import 'package:utility_watch/pages/home/home.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

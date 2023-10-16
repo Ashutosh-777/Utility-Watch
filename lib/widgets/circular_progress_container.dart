@@ -4,10 +4,10 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:utility_watch/globals/colors.dart';
 
 class MyPercentageContainer extends StatelessWidget {
-  String heading;
-  String percentage;
+  final String heading;
+  final String percentage;
 
-  MyPercentageContainer({
+  const MyPercentageContainer({
     Key? key,
     required this.heading,
     required this.percentage,
