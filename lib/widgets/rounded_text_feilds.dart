@@ -31,7 +31,7 @@ class RoundedTextField extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 5),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
         child: Row(
           children: [
             Container(
@@ -46,17 +46,25 @@ class RoundedTextField extends StatelessWidget {
             ),
             const SizedBox(width: 30),
             Expanded(
-              child: TextFormField(
-                decoration: InputDecoration(
-                  hintText: hintText,
-                  border: InputBorder.none,
-                ),
-                style: TextStyle(
-                  color: Color.fromRGBO(114, 114, 127, 1),
-                  fontFamily: 'SF Pro Text',
-                  fontSize: 14,
-                  letterSpacing: 0,
-                  fontWeight: FontWeight.normal,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: IntrinsicWidth(
+                  child: Container(
+                    height: height,
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        hintText: hintText,
+                        border: InputBorder.none,
+                      ),
+                      style: TextStyle(
+                        color: Color.fromRGBO(114, 114, 127, 1),
+                        fontFamily: 'SF Pro Text',
+                        fontSize: 14,
+                        letterSpacing: 0,
+                        fontWeight: FontWeight.normal,
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),
