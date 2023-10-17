@@ -14,21 +14,6 @@ class ObjectivePage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Icon(Icons.arrow_back_ios, color: MyColors.blueColor),
-              SizedBox(width: 10),
-              Text(
-                "Goal Settings",
-                style: GoogleFonts.nunitoSans(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: MyColors.blueColor,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 20),
           Text(
             "Today's Consumption",
             style: GoogleFonts.nunitoSans(
@@ -40,7 +25,8 @@ class ObjectivePage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              MyRoundedContainer(heading: "Electricity", val: "9 530", unit: "kWh"),
+              MyRoundedContainer(
+                  heading: "Electricity", val: "9 530", unit: "kWh"),
               SizedBox(width: 20),
               MyRoundedContainer(heading: "Water", val: "2 585", unit: "L"),
             ],
@@ -57,9 +43,10 @@ class ObjectivePage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              MyRoundedContainer(heading: "Electricity", val: "9 530", unit: "kWh"),
+              MyRoundedContainer(
+                  heading: "Electricity", val: "9 530", unit: "kWh"),
               SizedBox(width: 20),
-              MyRoundedContainer(heading: "Water", val: "2 585",unit:  "L"),
+              MyRoundedContainer(heading: "Water", val: "2 585", unit: "L"),
             ],
           ),
           SizedBox(height: 20),

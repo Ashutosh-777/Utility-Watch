@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:utility_watch/globals/assets.dart';
 import 'package:utility_watch/globals/colors.dart';
+import 'package:utility_watch/globals/styles.dart';
 import 'package:utility_watch/pages/account/account_tab.dart';
 import 'package:utility_watch/pages/insights/insights_tab.dart';
 import 'package:utility_watch/pages/objective/objective_tab.dart';
@@ -15,11 +18,20 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int selectedIndex = 0;
   List<Widget> tabs = [
-    ReadingsPage(),
+    ReadingPage(),
     const InsightsPage(),
     const ObjectivePage(),
     const AccountPage(),
   ];
+
+  List<String> labels = [
+    "Reading",
+    "Insights",
+    "Objective",
+    "Account",
+  ];
+
+  List<String> titles = ["Your Readings", "", "Goal Settings", ""];
 
   void updateTab(int index) {
     setState(() {
@@ -29,13 +41,21 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      bottom: false,
-      child: Scaffold(
-        backgroundColor: MyColors.backgroundColor,
-        body: tabs[selectedIndex],
-        bottomNavigationBar: _bottomNavigationBar(),
-      ),
+    return Scaffold(
+      appBar: titles[selectedIndex] != ""
+          ? AppBar(
+              elevation: 0,
+              backgroundColor: MyColors.backgroundColor,
+              title: Text(
+                titles[selectedIndex],
+                style: MyStyles.heading.copyWith(color: MyColors.blueColor),
+              ),
+              centerTitle: true,
+            )
+          : null,
+      backgroundColor: MyColors.backgroundColor,
+      body: tabs[selectedIndex],
+      bottomNavigationBar: _bottomNavigationBar(),
     );
   }
 
@@ -55,28 +75,44 @@ class _HomePageState extends State<HomePage> {
       fixedColor: MyColors.blueColor,
       onTap: (value) => updateTab(value),
       type: BottomNavigationBarType.fixed,
-      items: const [
+      items: [
         BottomNavigationBarItem(
-          icon: Icon(
-            Icons.speed_rounded,
+          icon: SvgPicture.asset(
+            Assets.readingsIcon,
+            color: labels[selectedIndex] == "Reading"
+                ? MyColors.blueColor
+                : MyColors.greyColor,
+            height: labels[selectedIndex] == "Reading" ? 28 : 24,
           ),
           label: "Reading",
         ),
         BottomNavigationBarItem(
-          icon: Icon(
-            Icons.notes_rounded,
+          icon: SvgPicture.asset(
+            Assets.insightsIcon,
+            color: labels[selectedIndex] == "Insights"
+                ? MyColors.blueColor
+                : MyColors.greyColor,
+            height: labels[selectedIndex] == "Insights" ? 28 : 24,
           ),
           label: "Insights",
         ),
         BottomNavigationBarItem(
-          icon: Icon(
-            Icons.circle_rounded,
+          icon: Image.asset(
+            Assets.objectiveIcon,
+            color: labels[selectedIndex] == "Objective"
+                ? MyColors.blueColor
+                : MyColors.greyColor,
+            height: labels[selectedIndex] == "Objective" ? 30 : 26,
           ),
           label: "Objective",
         ),
         BottomNavigationBarItem(
-          icon: Icon(
-            Icons.person,
+          icon: Image.asset(
+            Assets.accountIcon,
+            color: labels[selectedIndex] == "Account"
+                ? MyColors.blueColor
+                : MyColors.greyColor,
+            height: labels[selectedIndex] == "Account" ? 32 : 28,
           ),
           label: "Account",
         ),
