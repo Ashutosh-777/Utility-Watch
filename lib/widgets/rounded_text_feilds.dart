@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class RoundedTextField extends StatelessWidget {
   final String hintText;
   final String imagePath;
+  final TextEditingController controller;
 
   const RoundedTextField({
     Key? key,
     required this.hintText,
     required this.imagePath,
+    required this.controller,
   }) : super(key: key);
 
   @override
@@ -52,6 +54,7 @@ class RoundedTextField extends StatelessWidget {
                   child: Container(
                     height: height,
                     child: TextFormField(
+                      controller: controller,
                       decoration: InputDecoration(
                         hintText: hintText,
                         border: InputBorder.none,

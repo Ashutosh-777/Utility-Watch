@@ -13,6 +13,13 @@ class SignUpPage extends StatefulWidget {
 class SignUpPageState extends State<SignUpPage> {
   bool isSignUp = false;
 
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  final emailControllerSignIn = TextEditingController();
+  final passwordControllerSignIn = TextEditingController();
+  final userNameController = TextEditingController();
+  final phoneController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -128,7 +135,8 @@ class SignUpPageState extends State<SignUpPage> {
                               ),
                             ),
                             isSignUp? SizedBox(height: 30):SizedBox(height: 80),
-                            ...isSignUp ? SignUpWidget() : SignInWidget(),
+                            ...isSignUp ? SignUpWidget(userNameController,phoneController,emailController,passwordController) : SignInWidget(
+                                    emailControllerSignIn, passwordControllerSignIn),
                           ],
                         ),
                       ),
@@ -170,21 +178,42 @@ class SignUpPageState extends State<SignUpPage> {
   }
 }
 
-List<Widget> SignUpWidget() {
+List<Widget> SignUpWidget(
+    TextEditingController userNameController,
+    TextEditingController phoneController,
+    TextEditingController emailController,
+    TextEditingController passwordController) {
   return [
     RoundedTextField(
-        hintText: "UserName", imagePath: "asset/images/Image13.png"),
-    RoundedTextField(hintText: "Phone", imagePath: "asset/images/Image7.png"),
-    RoundedTextField(hintText: "Email", imagePath: "asset/images/Image10.png"),
+        hintText: "UserName",
+        imagePath: "asset/images/Image13.png",
+        controller: userNameController),
     RoundedTextField(
-        hintText: "Password", imagePath: "asset/images/Image11.png"),
+        hintText: "Phone",
+        imagePath: "asset/images/Image7.png",
+        controller: phoneController),
+    RoundedTextField(
+        hintText: "Email",
+        imagePath: "asset/images/Image10.png",
+        controller: emailController),
+    RoundedTextField(
+        hintText: "Password",
+        imagePath: "asset/images/Image11.png",
+        controller: passwordController),
   ];
 }
 
-List<Widget> SignInWidget() {
+List<Widget> SignInWidget(TextEditingController emailController,
+    TextEditingController passwordController) {
   return [
-    RoundedTextField(hintText: "Email", imagePath: "asset/images/Image10.png"),
     RoundedTextField(
-        hintText: "Password", imagePath: "asset/images/Image11.png"),
+        hintText: "Email",
+        imagePath: "asset/images/Image10.png",
+        controller: emailController),
+    RoundedTextField(
+        hintText: "Password",
+        imagePath: "asset/images/Image11.png",
+        controller: passwordController),
   ];
 }
+
