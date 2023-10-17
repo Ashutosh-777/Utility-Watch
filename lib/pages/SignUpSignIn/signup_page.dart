@@ -41,7 +41,6 @@ class SignUpPageState extends State<SignUpPage> {
                   Stack(
                     children: [
                       Container(
-                        
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(30),
@@ -54,120 +53,143 @@ class SignUpPageState extends State<SignUpPage> {
                             ),
                           ],
                         ),
-                        margin: EdgeInsets.only(right: 40,left: 40,bottom: 25),
+                        margin:
+                            EdgeInsets.only(right: 40, left: 40, bottom: 25),
                         padding: EdgeInsets.only(top: 10),
                         height: screenSize.height / 1.8,
                         width: double.maxFinite - 150,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: 188,
-                              decoration: BoxDecoration(
-                                  color: MyColors.lightGreyColor,
-                                  borderRadius: BorderRadius.circular(25)),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        isSignUp = false;
-                                      });
-                                    },
-                                    child: Container(
-                                        width: 94,
-                                        height: 32,
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(25),
-                                          color: isSignUp
-                                              ? MyColors.lightGreyColor
-                                              : MyColors.blueColor,
-                                        ),
-                                        child: Center(
-                                          child: Text(
-                                            'Sign In',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                                color: isSignUp
-                                                    ? MyColors.greyColor
-                                                    : Colors.white,
-                                                fontFamily: 'SF Pro Text',
-                                                fontSize: 14,
-                                                letterSpacing: 0,
-                                                fontWeight: FontWeight.normal),
+                        child: Center(
+                          child: Column(
+                            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: 188,
+                                decoration: BoxDecoration(
+                                    color: MyColors.lightGreyColor,
+                                    borderRadius: BorderRadius.circular(25)),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    GestureDetector(
+                                      onTap: () {
+                                        setState(() {
+                                          isSignUp = false;
+                                        });
+                                      },
+                                      child: Container(
+                                          width: 94,
+                                          height: 32,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(25),
+                                            color: isSignUp
+                                                ? MyColors.lightGreyColor
+                                                : MyColors.blueColor,
                                           ),
-                                        )),
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        isSignUp = true;
-                                      });
-                                    },
-                                    child: Container(
-                                        width: 94,
-                                        height: 32,
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(25),
-                                          color: isSignUp
-                                              ? MyColors.blueColor
-                                              : MyColors.lightGreyColor,
-                                        ),
-                                        child: Center(
-                                          child: Text(
-                                            'Sign Up',
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                                color: isSignUp
-                                                    ? Colors.white
-                                                    : MyColors.greyColor,
-                                                fontFamily: 'SF Pro Text',
-                                                fontSize: 14,
-                                                letterSpacing: 0,
-                                                fontWeight: FontWeight.normal),
+                                          child: Center(
+                                            child: Text(
+                                              'Sign In',
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                  color: isSignUp
+                                                      ? MyColors.greyColor
+                                                      : Colors.white,
+                                                  fontFamily: 'SF Pro Text',
+                                                  fontSize: 14,
+                                                  letterSpacing: 0,
+                                                  fontWeight:
+                                                      FontWeight.normal),
+                                            ),
+                                          )),
+                                    ),
+                                    GestureDetector(
+                                      onTap: () {
+                                        setState(() {
+                                          isSignUp = true;
+                                        });
+                                      },
+                                      child: Container(
+                                          width: 94,
+                                          height: 32,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(25),
+                                            color: isSignUp
+                                                ? MyColors.blueColor
+                                                : MyColors.lightGreyColor,
                                           ),
-                                        )),
-                                  ),
-                                ],
+                                          child: Center(
+                                            child: Text(
+                                              'Sign Up',
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                  color: isSignUp
+                                                      ? Colors.white
+                                                      : MyColors.greyColor,
+                                                  fontFamily: 'SF Pro Text',
+                                                  fontSize: 14,
+                                                  letterSpacing: 0,
+                                                  fontWeight:
+                                                      FontWeight.normal),
+                                            ),
+                                          )),
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                            isSignUp? SizedBox(height: 30):SizedBox(height: 80),
-                            ...isSignUp ? SignUpWidget(userNameController,phoneController,emailController,passwordController) : SignInWidget(
-                                    emailControllerSignIn, passwordControllerSignIn),
-                          ],
+                              Container(
+                                height: screenSize.height/1.8 - 60,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                  ...isSignUp
+                                        ? SignUpWidget(
+                                            userNameController,
+                                            phoneController,
+                                            emailController,
+                                            passwordController)
+                                        : SignInWidget(emailControllerSignIn,
+                                            passwordControllerSignIn),
+                                ],),
+                              ),
+                              // ...isSignUp
+                              //     ? SignUpWidget(
+                              //         userNameController,
+                              //         phoneController,
+                              //         emailController,
+                              //         passwordController)
+                              //     : SignInWidget(emailControllerSignIn,
+                              //         passwordControllerSignIn),
+                            ],
+                          ),
                         ),
                       ),
                       Positioned(
                         bottom: 0,
-                        right: screenSize.width/2-80,
-                          child: SizedBox(
-                            width: 120,
-                            child: ElevatedButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const HomePage()),
-                                );
-                              },
-                              child: isSignUp ? Text("SIGN UP") : Text("SIGN IN"),
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: MyColors.blueColor,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
+                        right: screenSize.width / 2 - 80,
+                        child: SizedBox(
+                          width: 120,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const HomePage()),
+                              );
+                            },
+                            child: isSignUp ? Text("SIGN UP") : Text("SIGN IN"),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: MyColors.blueColor,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
                               ),
                             ),
                           ),
+                        ),
                       ),
                     ],
                   ),
-                  
-                  
-                  
                 ],
               ),
             ),

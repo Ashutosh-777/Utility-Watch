@@ -51,6 +51,7 @@ class RoundedTextField extends StatelessWidget {
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: IntrinsicWidth(
+                  stepWidth: width,
                   child: Container(
                     height: height,
                     child: TextFormField(
