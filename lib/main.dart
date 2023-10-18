@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:utility_watch/globals/colors.dart';
 import 'package:utility_watch/pages/SignUpSignIn/signup_page.dart';
 
+final navigatorKey = GlobalKey<NavigatorState>();
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -17,6 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       title: 'Utility-Watch',
       theme: ThemeData(),
