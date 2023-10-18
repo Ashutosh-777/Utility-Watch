@@ -23,11 +23,10 @@ class ObjectivePage extends StatelessWidget {
           ),
           SizedBox(height: 10),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               MyRoundedContainer(
                   heading: "Electricity", val: "9 530", unit: "kWh"),
-              SizedBox(width: 20),
               MyRoundedContainer(heading: "Water", val: "2 585", unit: "L"),
             ],
           ),
@@ -41,11 +40,10 @@ class ObjectivePage extends StatelessWidget {
           ),
           SizedBox(height: 10),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               MyRoundedContainer(
                   heading: "Electricity", val: "9 530", unit: "kWh"),
-              SizedBox(width: 20),
               MyRoundedContainer(heading: "Water", val: "2 585", unit: "L"),
             ],
           ),
@@ -59,10 +57,9 @@ class ObjectivePage extends StatelessWidget {
           ),
           SizedBox(height: 10),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               MyPercentageContainer(heading: "Electricity", percentage: "60%"),
-              SizedBox(width: 20),
               MyPercentageContainer(heading: "Water", percentage: "40%"),
             ],
           ),

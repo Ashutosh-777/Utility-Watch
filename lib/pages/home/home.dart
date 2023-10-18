@@ -64,13 +64,9 @@ class _HomePageState extends State<HomePage> {
       currentIndex: selectedIndex,
       backgroundColor: MyColors.backgroundColor,
       showUnselectedLabels: true,
-      selectedFontSize: 12,
+      selectedFontSize: 11,
       unselectedFontSize: 11,
       selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
-      unselectedIconTheme: const IconThemeData(
-        size: 26,
-        color: MyColors.greyColor,
-      ),
       selectedIconTheme: const IconThemeData(size: 30),
       fixedColor: MyColors.blueColor,
       onTap: (value) => updateTab(value),
@@ -82,7 +78,7 @@ class _HomePageState extends State<HomePage> {
             color: labels[selectedIndex] == "Reading"
                 ? MyColors.blueColor
                 : MyColors.greyColor,
-            height: labels[selectedIndex] == "Reading" ? 28 : 24,
+            height: 24,
           ),
           label: "Reading",
         ),
@@ -92,7 +88,7 @@ class _HomePageState extends State<HomePage> {
             color: labels[selectedIndex] == "Insights"
                 ? MyColors.blueColor
                 : MyColors.greyColor,
-            height: labels[selectedIndex] == "Insights" ? 28 : 24,
+            height: 24,
           ),
           label: "Insights",
         ),
@@ -102,7 +98,7 @@ class _HomePageState extends State<HomePage> {
             color: labels[selectedIndex] == "Objective"
                 ? MyColors.blueColor
                 : MyColors.greyColor,
-            height: labels[selectedIndex] == "Objective" ? 30 : 26,
+            height: 26,
           ),
           label: "Objective",
         ),
@@ -112,7 +108,7 @@ class _HomePageState extends State<HomePage> {
             color: labels[selectedIndex] == "Account"
                 ? MyColors.blueColor
                 : MyColors.greyColor,
-            height: labels[selectedIndex] == "Account" ? 32 : 28,
+            height: 26,
           ),
           label: "Account",
         ),

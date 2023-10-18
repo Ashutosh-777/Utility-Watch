@@ -34,7 +34,7 @@ class SignUpPageState extends State<SignUpPage> {
                   CircleAvatar(
                     radius: 30,
                     child: Image.asset(
-                      "assets/images/image 3.png",
+                      "assets/icons/app_logo.png",
                     ),
                   ),
                   SizedBox(height: 20),
@@ -209,19 +209,19 @@ List<Widget> SignUpWidget(
   return [
     RoundedTextField(
         hintText: "UserName",
-        imagePath: "assets/images/Image13.png",
+        imagePath: "assets/icons/person.png",
         controller: userNameController),
     RoundedTextField(
         hintText: "Phone",
-        imagePath: "assets/images/Image7.png",
+        imagePath: "assets/icons/phone.png",
         controller: phoneController),
     RoundedTextField(
         hintText: "Email",
-        imagePath: "assets/images/Image10.png",
+        imagePath: "assets/icons/email.png",
         controller: emailController),
     RoundedTextField(
         hintText: "Password",
-        imagePath: "assets/images/Image11.png",
+        imagePath: "assets/icons/lock.png",
         controller: passwordController),
   ];
 }
@@ -231,11 +231,11 @@ List<Widget> SignInWidget(TextEditingController emailController,
   return [
     RoundedTextField(
         hintText: "Email",
-        imagePath: "assets/images/Image10.png",
+        imagePath: "assets/icons/email.png",
         controller: emailController),
     RoundedTextField(
         hintText: "Password",
-        imagePath: "assets/images/Image11.png",
+        imagePath: "assets/icons/lock.png",
         controller: passwordController),
   ];
 }
