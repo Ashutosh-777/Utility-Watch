@@ -9,27 +9,13 @@ class AccountPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(10),
-      padding: EdgeInsets.only(top: 10),
+      padding: EdgeInsets.only(top: 40),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
-            children: [
-              Icon(Icons.arrow_back_ios, color: MyColors.blueColor),
-              SizedBox(width: 10),
-              Text(
-                "Account",
-                style: GoogleFonts.nunitoSans(
-                  fontSize: 21,
-                  fontWeight: FontWeight.bold,
-                  color: MyColors.blueColor,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               CircleAvatar(
                 radius: 29,
@@ -54,6 +40,7 @@ class AccountPage extends StatelessWidget {
               ),
             ],
           ),
+          SizedBox(width: 20),
           Divider(color: MyColors.greyColor),
           SizedBox(height: 20), // Increase space between menu items
           _buildMenuItem(Icons.notifications_outlined, "Notification"),

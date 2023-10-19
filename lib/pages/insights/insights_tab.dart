@@ -47,7 +47,7 @@ class _InsightsPageState extends State<InsightsPage> {
       );
 
   final List<FlSpot> dummyData1 = [
-    FlSpot(1, 10),
+    FlSpot(0, 10),
     FlSpot(2, 2),
     FlSpot(4, 8),
     FlSpot(6, 4),
