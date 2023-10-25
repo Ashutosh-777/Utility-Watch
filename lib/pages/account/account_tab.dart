@@ -7,48 +7,50 @@ class AccountPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(10),
-      padding: EdgeInsets.only(top: 40),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              CircleAvatar(
-                radius: 29,
-                backgroundColor: MyColors.greyColor,
-                child: Text(
-                  "AK",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
+    return SingleChildScrollView(
+      child: Container(
+        margin: EdgeInsets.all(10),
+        padding: EdgeInsets.only(top: 40),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                CircleAvatar(
+                  radius: 29,
+                  backgroundColor: MyColors.greyColor,
+                  child: Text(
+                    "AK",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(width: 20),
-              Text(
-                "Ashutosh Kumar",
-                style: GoogleFonts.nunitoSans(
-                  fontSize: 26,
-                  fontWeight: FontWeight.bold,
-                  color: MyColors.greyColor,
+                SizedBox(width: 20),
+                Text(
+                  "Ashutosh Kumar",
+                  style: GoogleFonts.nunitoSans(
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                    color: MyColors.greyColor,
+                  ),
                 ),
-              ),
-            ],
-          ),
-          SizedBox(width: 20),
-          Divider(color: MyColors.greyColor),
-          SizedBox(height: 20), // Increase space between menu items
-          _buildMenuItem(Icons.notifications_outlined, "Notification"),
-          _buildMenuItem(Icons.leaderboard, "Leaderboard"),
-          _buildMenuItem(Icons.analytics, "Report and Analytics"),
-          _buildMenuItem(Icons.help_outline, "Help"),
-          _buildMenuItem(Icons.person_add, "Invite a friend"),
-        ],
+              ],
+            ),
+            SizedBox(width: 20),
+            Divider(color: MyColors.greyColor),
+            SizedBox(height: 20), // Increase space between menu items
+            _buildMenuItem(Icons.notifications_outlined, "Notification"),
+            _buildMenuItem(Icons.leaderboard, "Leaderboard"),
+            _buildMenuItem(Icons.analytics, "Report and Analytics"),
+            _buildMenuItem(Icons.help_outline, "Help"),
+            _buildMenuItem(Icons.person_add, "Invite a friend"),
+          ],
+        ),
       ),
     );
   }
