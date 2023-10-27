@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:utility_watch/globals/colors.dart';
 import 'package:utility_watch/pages/home/home.dart';
 import 'package:utility_watch/widgets/rounded_text_feilds.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -173,11 +174,13 @@ class SignUpPageState extends State<SignUpPage> {
                           width: 120,
                           child: ElevatedButton(
                             onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const HomePage()),
-                              );
+                              if (isSignUp) {
+                                signUp(emailController.text,
+                                    passwordController.text);
+                              } else {
+                                signIn(emailControllerSignIn.text,
+                                    passwordControllerSignIn.text);
+                              }
                             },
                             child: isSignUp ? Text("SIGN UP") : Text("SIGN IN"),
                             style: ElevatedButton.styleFrom(
@@ -198,6 +201,52 @@ class SignUpPageState extends State<SignUpPage> {
         ),
       ),
     );
+  }
+
+  void signUp(String emailAddress, String password) async {
+    try {
+      final credential =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: emailAddress,
+        password: password,
+      );
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const HomePage()),
+      );
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        print('The password provided is too weak.');
+      } else if (e.code == 'email-already-in-use') {
+        print('The account already exists for that email.');
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  void signIn(String emailAddress, String password) async {
+    try {
+      final credential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: emailAddress, password: password);
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const HomePage()),
+      );
+    } on FirebaseAuthException catch (e) {
+
+      if (e.code == 'user-not-found') {
+        print('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        print('Wrong password provided for that user.');
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  void signOut() async {
+    await FirebaseAuth.instance.signOut();
   }
 }
 
