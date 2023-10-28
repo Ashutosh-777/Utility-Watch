@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   List<Widget> tabs = [
     ReadingPage(),
     const InsightsPage(),
-    const ObjectivePage(),
+    ObjectivePage(),
     const AccountPage(),
   ];
 
