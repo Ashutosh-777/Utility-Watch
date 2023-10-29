@@ -51,13 +51,15 @@ class MyRoundedContainer extends StatelessWidget {
               SizedBox(
                 width: 10,
               ),
-              Text(
-                unit,
-                style: GoogleFonts.nunitoSans(
-                  fontSize: 18,
-                  color: MyColors.greyColor,
-                ),
-              )
+              val != '--'
+                  ? Text(
+                      unit,
+                      style: GoogleFonts.nunitoSans(
+                        fontSize: 18,
+                        color: MyColors.greyColor,
+                      ),
+                    )
+                  : Container()
             ],
           ),
           SizedBox(height: 10),
