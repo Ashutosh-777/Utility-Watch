@@ -14,10 +14,10 @@ class ObjectivePage extends StatefulWidget {
 class _ObjectivePageState extends State<ObjectivePage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  String electricityConsumption = '9 530';
-  String waterConsumption = '2 585';
-  String monthlyElectricityGoal = '9 530';
-  String monthlyWaterGoal = '2 585';
+  String electricityConsumption = '--';
+  String waterConsumption = '--';
+  String monthlyElectricityGoal = '--';
+  String monthlyWaterGoal = '--';
 
   void _updateConsumption(String type, String value) {
     setState(() {
@@ -98,9 +98,9 @@ class _ObjectivePageState extends State<ObjectivePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   MyPercentageContainer(
-                      heading: "Electricity", percentage: "60"),
+                      heading: "Electricity", percentage: "Goal not Set"),
                   // SizedBox(width: 10),
-                  MyPercentageContainer(heading: "Water", percentage: "40"),
+                  MyPercentageContainer(heading: "Water", percentage: "Goal not Set"),
                 ],
               ),
             ],
