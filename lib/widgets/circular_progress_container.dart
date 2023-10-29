@@ -35,7 +35,7 @@ class _MyPercentageContainerState extends State<MyPercentageContainer> {
           context: context,
           builder: (context) {
             return AlertDialog(
-              title: Text('Enter heading Consumption'),
+              title: Text('Enter Consumption'),
               content: Form(
                 key: _formKey,
                 child: TextFormField(
@@ -103,14 +103,27 @@ class _MyPercentageContainerState extends State<MyPercentageContainer> {
                 radius: 50.0,
                 lineWidth: 13.0,
                 animation: true,
-                percent:  widget.percentage!='Goal not Set'? double.parse(widget.percentage) / 100: 0.0,
+                percent: widget.percentage != 'Goal not Set'
+                    ? double.parse(widget.percentage) / 100
+                    : 0.0,
                 center: SizedBox(
                   width: 60,
                   child: Center(
-                    child: Text(widget.percentage != 'Goal not Set' ?
-                      widget.percentage + '%' : widget.percentage,
-                      style: TextStyle(fontWeight:widget.percentage != 'Goal not Set' ?FontWeight.bold:FontWeight.normal,fontSize: 
-                          widget.percentage == 'Goal not Set' ? 15.0 : 20.0, color:widget.percentage == 'Goal not Set'? MyColors.greyColor:Colors.black),
+                    child: Text(
+                      textAlign: TextAlign.center,
+                      widget.percentage != 'Goal not Set'
+                          ? widget.percentage + '%'
+                          : widget.percentage,
+                      style: TextStyle(
+                        fontWeight: widget.percentage != 'Goal not Set'
+                            ? FontWeight.bold
+                            : FontWeight.normal,
+                        fontSize:
+                            widget.percentage == 'Goal not Set' ? 15.0 : 20.0,
+                        color: widget.percentage == 'Goal not Set'
+                            ? MyColors.greyColor
+                            : Colors.black,
+                      ),
                     ),
                   ),
                 ),
